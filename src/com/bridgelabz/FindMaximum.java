@@ -1,8 +1,17 @@
 package com.bridgelabz;
 
 public class FindMaximum <T extends Comparable<T>> {
-
     T x, y, z;
+    public FindMaximum(T x, T y, T z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public T maximumNum() {
+        return FindMaximum.maximum(x, y, z);
+    }
+
     public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
 
         T max = x;
