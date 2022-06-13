@@ -1,10 +1,11 @@
 package com.bridgelabz;
 
-public class FindMaximum{
+public class FindMaximum <T extends Comparable<T>> {
 
-    public String maxNum(String x, String y, String z) {
+    T x, y, z;
+    public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
 
-        String max = x;
+        T max = x;
 
         if(y.compareTo(max) > 0) {
             max = y;
