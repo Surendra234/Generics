@@ -2,9 +2,9 @@ package com.bridgelabz;
 
 public class FindMaximum{
 
-    public Float maxNum(Float x, Float y, Float z) {
+    public String maxNum(String x, String y, String z) {
 
-        Float max = x;
+        String max = x;
 
         if(y.compareTo(max) > 0) {
             max = y;
