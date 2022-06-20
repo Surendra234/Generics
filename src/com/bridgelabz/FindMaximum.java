@@ -1,28 +1,35 @@
 package com.bridgelabz;
 
-public class FindMaximum <T extends Comparable<T>> {
-    T x, y, z;
-    public FindMaximum(T x, T y, T z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+import java.util.Arrays;
+
+public class FindMaximum <T extends Comparable<T>>{
+    T[] array;
+
+    public FindMaximum(T[] array) {
+        this.array = array;
     }
 
-    public T maximumNum() {
-        return FindMaximum.maximum(x, y, z);
+    public T maximum() {
+        return FindMaximum.maximumNum(array);
     }
 
-    public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
+    public static <T extends Comparable<T>> T maximumNum(T[] array) {
 
-        T max = x;
+        for (int i = 0; i < array.length - 1; i++) {
 
-        if(y.compareTo(max) > 0) {
-            max = y;
+            for (int j = 0; j < array.length - i - 1; j++) {
+
+                if (array[j].compareTo(array[j + 1]) > 0) {
+
+                    T temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
         }
-        if(z.compareTo(max) > 0) {
-            max = z;
-        }
-
-        return max;
+        System.out.println("Sorted array " + Arrays.toString(array));
+        System.out.println("Maximum from the above array is " + array[array.length - 1]);
+        System.out.println("\n=========================================================================");
+        return array[array.length - 1];
     }
 }
